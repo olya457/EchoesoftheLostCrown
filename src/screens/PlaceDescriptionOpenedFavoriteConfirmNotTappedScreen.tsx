@@ -133,6 +133,7 @@ const PLACES_DETAIL: Record<string, DetailData> = {
   },
 };
 
+
 export default function PlaceDescriptionOpenedFavoriteConfirmNotTappedScreen({
   route,
   navigation,
@@ -270,21 +271,17 @@ export default function PlaceDescriptionOpenedFavoriteConfirmNotTappedScreen({
               resizeMode="contain"
             />
           </TouchableOpacity>
-
-          {!confirmedNow && (
-            <TouchableOpacity
-              style={styles.confirmBtnWrapper}
-              activeOpacity={0.8}
-              onPress={handleConfirmLocation}
-            >
-              <Image
-                source={require('../assets/confirm_location_btn.png')}
-                style={styles.confirmBtnImage}
-                resizeMode="stretch"
-              />
-            </TouchableOpacity>
-          )}
-
+          <TouchableOpacity
+            style={styles.confirmBtnWrapper}
+            activeOpacity={0.8}
+            onPress={handleConfirmLocation}
+          >
+            <Image
+              source={require('../assets/confirm_location_btn.png')}
+              style={styles.confirmBtnImage}
+              resizeMode="stretch"
+            />
+          </TouchableOpacity>
           <TouchableOpacity
             style={styles.bottomActionBtn}
             activeOpacity={0.7}

@@ -1,4 +1,4 @@
-package com.echoes.of.the.lost.crown
+package com.bullseye
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

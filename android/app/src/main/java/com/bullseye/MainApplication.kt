@@ -1,4 +1,4 @@
-package com.echoes.of.the.lost.crown
+package com.bullseye
 
 import android.app.Application
 import com.facebook.react.PackageList

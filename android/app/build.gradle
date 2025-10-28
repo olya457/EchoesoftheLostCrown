@@ -77,9 +77,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.echoes.of.the.lost.crown"
+    namespace "com.bullseye"
     defaultConfig {
-        applicationId "com.echoes.of.the.lost.crown"
+        applicationId "com.bullseye"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
