@@ -144,7 +144,7 @@ function ProgressBlock({
 const COLOR_BAR_BG = 'rgba(0,0,0,0.5)';
 const COLOR_BAR_BORDER = 'rgba(255,255,255,0.4)';
 const COLOR_BAR_EMPTY = 'rgba(160,160,160,0.35)';
-const COLOR_BAR_ACTIVE = '#e6b115ff';
+const COLOR_BAR_ACTIVE = '#ee30d4ff';
 
 const styles = StyleSheet.create({
   bg: {

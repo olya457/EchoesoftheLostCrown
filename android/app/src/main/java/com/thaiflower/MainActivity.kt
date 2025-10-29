@@ -1,4 +1,4 @@
-package com.bullseye
+package com.thaiflower
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

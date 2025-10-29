@@ -1,4 +1,4 @@
-package com.bullseye
+package com.thaiflower
 
 import android.app.Application
 import com.facebook.react.PackageList

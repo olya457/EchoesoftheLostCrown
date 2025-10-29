@@ -21,7 +21,7 @@ const slides = [
   {
     id: 0,
     girl: require('../assets/girl_step1.png'),
-    title: 'Welcome to the Bullseye',
+    title: 'Welcome to the Thai Flower',
     text:
       "Step into Edinburgh’s past and uncover the stories of kings, queens, and the echoes they left behind.",
     buttonText: 'Next',
@@ -53,12 +53,21 @@ const slides = [
 ];
 
 const HERO_HEIGHT = height * 0.48;
-const CARD_OVERLAP = 24;
 const CONTENT_TOP_OFFSET = 50;
+
+const GIRL_WIDTH = width * 0.6;
+const GIRL_HEIGHT = HERO_HEIGHT * 0.9;
+
+const BASE_CARD_OVERLAP = 32;
+
+const DEEP_CARD_OVERLAP = 52; 
+const GIRL_DOWN_SHIFT = 24;   
 
 export default function OnboardingScreen({ navigation }: Props) {
   const [index, setIndex] = useState(0);
   const slide = slides[index];
+
+  const isDeepOverlap = slide.id === 2;
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const translateAnim = useRef(new Animated.Value(20)).current;
@@ -91,6 +100,21 @@ export default function OnboardingScreen({ navigation }: Props) {
     }
   };
 
+  const heroWrapperStyle = [
+    styles.heroWrapper,
+    isDeepOverlap && { paddingBottom: 0 },
+  ];
+
+  const girlImageStyle = [
+    styles.girlImage,
+    isDeepOverlap && { transform: [{ translateY: GIRL_DOWN_SHIFT }] },
+  ];
+
+  const cardWrapperStyle = [
+    styles.cardWrapper,
+    { marginTop: -(isDeepOverlap ? DEEP_CARD_OVERLAP : BASE_CARD_OVERLAP) },
+  ];
+
   return (
     <ImageBackground
       source={require('../assets/background_1.png')}
@@ -106,15 +130,16 @@ export default function OnboardingScreen({ navigation }: Props) {
           },
         ]}
       >
-        <View style={styles.heroWrapper}>
+       
+        <View style={heroWrapperStyle}>
           <Image
             source={slide.girl}
-            style={styles.girlImage}
+            style={girlImageStyle}
             resizeMode="contain"
           />
         </View>
 
-        <View style={styles.cardWrapper}>
+        <View style={cardWrapperStyle}>
           <View style={styles.card}>
             <Text style={styles.cardTitle}>{slide.title}</Text>
             <Text style={styles.cardText}>{slide.text}</Text>
@@ -169,18 +194,15 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    paddingBottom: 4,
   },
 
   girlImage: {
-    width: '75%',
-    height: '90%',
-    maxHeight: HERO_HEIGHT * 0.9,
+    width: GIRL_WIDTH,
+    height: GIRL_HEIGHT,
   },
 
   cardWrapper: {
     paddingHorizontal: 24,
-    marginTop: -CARD_OVERLAP,
   },
 
   card: {
@@ -188,7 +210,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     paddingHorizontal: 20,
     paddingVertical: 28,
-    backgroundColor: 'rgba(0,0,0,0.6)',
+    backgroundColor: '#1B1B1F', 
     borderWidth: 1,
     borderColor: 'rgba(255,255,255,0.15)',
   },
@@ -202,7 +224,7 @@ const styles = StyleSheet.create({
   },
 
   cardText: {
-    color: '#ddd',
+    color: '#DDDDDD',
     fontSize: 15,
     lineHeight: 20,
     textAlign: 'center',
