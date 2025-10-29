@@ -21,7 +21,7 @@ const slides = [
   {
     id: 0,
     girl: require('../assets/girl_step1.png'),
-    title: 'Welcome to the Royal Trail',
+    title: 'Welcome to the Bullseye',
     text:
       "Step into Edinburgh’s past and uncover the stories of kings, queens, and the echoes they left behind.",
     buttonText: 'Next',
