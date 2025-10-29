@@ -41,14 +41,14 @@ const loaderHTML = `
         height: 20px;
         width: 20px;
         border-radius: 50%;
-        border: 2px solid #e8e8e8;
-        background: #16b0c1;
+        border: 2px solid #e6a0a0ff;
+        background: #c63b11ff;
         animation: jump 0.8s ease-in-out infinite alternate;
       }
 
       @keyframes jump {
         100% {
-          background: #661e92;
+          background: #981414ff;
           transform: translateZ(-3rem) scale(1.9);
         }
       }
